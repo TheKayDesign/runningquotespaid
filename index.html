@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/javascript.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.7.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+		
+    }
+
+    function onDeviceReady() {
+		document.addEventListener("backbutton", onBackKeyDown, false);
+		 myFunction();
+   // document.removeEventListener('deviceready', onDeviceReady, false);
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+   /* function onDeviceReady() {
+		 document.addEventListener("backbutton", onBackKeyDown, false);
+		 myFunction();
+    }*/
+	
+	function onBackKeyDown() {
+		/*document.getElementById("Outer2").style.display = "block";
+		document.getElementById("Outer").style.display = "none";
+		document.getElementById("Outer4").style.display = "none";
+		document.getElementById("Outer3").style.display = "none";*/
+		document.getElementById("LogoBoxZindex").style.visibility = "visible";
+	/*	MSApp.terminateApp();
+		window.open("ms-windows-store://review/?ProductId=9mv4pl5bngs1", "_self");
+		alert('backbutton');*/
+    }
+	
+	function ConfirmExit() {
+		document.getElementById("Outer2").style.display = "block"
+		document.getElementById("Outer").style.display = "none";
+		document.getElementById("Outer4").style.display = "none";
+		document.getElementById("Outer3").style.display = "none";;
+		/*MSApp.terminateApp(); - windows exit code*/
+		navigator.app.exitApp();  /* andriod exit code */
+	/*	alert('backbutton');*/
+		 }
+
+    </script>
+       <title>Cycling Quotes Paid Edition</title>
+</head>
+<body onload="onLoad()"><div id="LogoBoxZindex"><div id="ExitScreen">
+  <p style="font-family:Arial;font-weight:bold;color:#ffffff;font-size:1.6em;">Quit?</p>
+                 <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="ConfirmExit();">YES</button>
+              </div> 
+               <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="document.getElementById('LogoBoxZindex').style.visibility = 'hidden';">NO</button>
+              </div> 
+               <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="window.open('market://details?id=com.kaydownes.runningquotespaid', '_system');">RATE APP</button>
+              </div> 
+   
+</div></div>
+
+<div id="Outer2"><a name="TopStartPage"></a><div align="center">
+    <div class="Inner">
+   <!-- test -->  
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div>
+     
+        <h1>Running Quotes</h1>  <div class="AboutText">Your daily fix of Running Tips, Jokes, Quotes and Annecdotes to help educate, entertain and inspire you on your future running adventures...  </div>
+        
+       <div id="StartButtons">
+        <button class="StartmyButton" onclick="var now = new Date(); var start = new Date(now.getFullYear(), 0, 0); var diff = now - start; var oneDay = 1000 * 60 * 60 * 24; var day = Math.floor(diff / oneDay); document.getElementById('Outer').style.display = 'block'; document.getElementById('Outer2').style.display = 'none';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer4').style.display = 'none';getElementById('demo2').innerHTML=car[day];document.getElementById('Texty').innerHTML='Today\'s Quote'; todaysDate();window.location = '#TopPage';">Today's Quote</button>
+
+  
+  <button class="StartmyButton" onclick="document.getElementById('Outer4').style.display = 'block';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer').style.display = 'none'; document.getElementById('Outer2').style.display = 'none';window.location = '#TopAboutPage';">About</button>
+
+  
+  <button class="StartmyButton" onclick="select=1;document.getElementById('Outer3').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer2').style.display = 'none';window.location = '#TopStudyPage';admob.requestInterstitialAd({
+    autoShowInterstitial: true
+});">Running Study</button>
+  
+<!--  <button class="StartmyButton" onclick="Windows.System.Launcher.LaunchUriAsync(new Uri(ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe));');">Rate This App</button>-->
+  
+  
+  </div>
+       <blockquote>&nbsp;</blockquote>
+<!-- end QuoteExt --></div><!-- end MainQuote --></div>
+<div align="center">
+  <div id="TheKayCredit"><div class="KayCredit">
+     <!-- <a href="http://www.kaydownes.com" target="_system" style="color: #ffffff;text-decoration:none;">--><a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #ffffff;text-decoration:none; text-shadow: 2px 2px 4px #000000;">Designed & Developed by<br>www.kaydownes.com</a></div>
+</div>
+  <p>&nbsp;</p>
+
+<!-- end div centre --></div> 
+<!-- end div ButtonInner -->
+    </div> <!-- end class Inner -->
+    </div> <!-- end class div center -->
+
+</div>
+<div id="Outer"><a name="TopPage"></a>
+<div align="center">
+    <div class="Inner">
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div>
+     
+        <h1><div id="Texty"></div></h1>      
+        <div class="QuoteText"><p id="demo2"><p><!--Although you may not always be able to avoid difficult situations, you can modify the extent to which you can suffer by how you choose to respond to the situation.</p>--><!--"It is easy to believe we are each wave and forget we are also
+the ocean."--></div>
+<div class="DateText" id="demo"></div>
+<!-- end QuoteExt --></div><!-- end MainQuote --></div>
+<div align="center">
+  <div id="ButtonInner">
+    <div id="MainQuote2"><button class="myButton" onclick="var now = new Date(); var start = new Date(now.getFullYear(), 0, 0); var diff = now - start; var oneDay = 1000 * 60 * 60 * 24; var day = Math.floor(diff / oneDay ); getElementById('demo2').innerHTML=car[day];document.getElementById('Texty').innerHTML='Today\'s Quote'; todaysDate();window.location = '#TopPage';">Today's<br>Quote</button>
+    
+    </div>
+    
+    <div id="MainQuote2b"><button class="myButton" onclick="getElementById('demo2').innerHTML=car[+Math.floor((Math.random() * 366) + 1)];document.getElementById('Texty').innerHTML='Random Quote'; todaysDate();window.location = '#TopPage';">Random<br>Quote</button>
+    </div>
+    
+    <div id="MainQuote2">
+      <button class="myButton2" onclick="select=2;document.getElementById('Outer3').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer2').style.display = 'none';window.location = '#TopStudyPage';">Running<br>Study</button></div>
+    
+        <div id="MainQuote2b"><button class="myButton2" onclick="document.getElementById('Outer2').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer3').style.display = 'none';window.location = '#TopStartPage';">&#9664;&#9664;<br>Back</button></div>
+
+</div> <!-- end buttno inner -->
+    
+  <!--  <div id="TheKayCredit"><div class="KayCreditBlack">Designed & Developed by<br>
+     <!-- <a href="http://www.kaydownes.com" target="_blank" style="color: #000000;text-decoration:none;">www.kaydownes.com</a>--><!--<a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #000000;text-decoration:none;">www.kaydownes.com</a></div>
+  </div>--> <!-- end div button inner -->
+  
+  <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!-- end div centre --></div> 
+    </div> <!-- end class Inner -->
+    </div> <!-- end class div center -->
+    </div> <!-- end ID outer -->
+
+
+<!-- books page -->
+
+<div id="Outer4"><a name="TopAboutPage"></a>
+<div align="center">
+   <div class="Inner">
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div><h1>About</h1>
+          <div class="AboutText">Thankyou for purchasing this app. I hope you enjoy using it.</div>
+            <br><br>
+         <div class="AboutText"><span style="font-weight:bold;color:#ffea00;">Updates</span><br>
+          Expansion is planned for this app and updates shall be released as and when ready.<br>
+          <br>
+         </div>
+ 
+          
+  <div class="AboutText"> Running Quotes is 
+    created by<br>
+    <a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #ffffff;text-decoration:none;">www.kaydownes.com</a>
+  </div>
+        <table width="96%" border="0" style="padding-top:15px">
+            <tr>
+              <td width="42%"></td>
+              <td width="20%" align="center" valign="middle" style="text-align: center"><div id="LogoBox3"><img onclick="document.getElementById('Outer2').style.display = 'block';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer').style.display = 'none';window.location = '#TopStartPage';" src="img/back-button.png" class="LogoImg2"></div></td>
+              <td width="37%"></td>
+            </tr>
+          </table>
+        <br><br>
+        <!--<p></p>-->
+
+            
+           
+        </div> 
+</div><!-- end MainQuote --></div>
+</div></div>  
+
+<!-- end books page -->
+
+<!-- about page-->
+
+<div id="Outer3"><a name="TopStudyPage"></a>
+<div align="center">
+<div class="InnerScrollBooks">
+   <div class="Inner">
+    
+    <div id="MainQuote">
+    
+   <table width="96%" border="0" style="padding-top:15px">
+  <tr>
+    <td width="20%"><div id="LogoBox2"><img onclick="backFunction();" src="img/ZinYangLogo106.png" class="LogoImg2"><!--<img src="img/ZinYangLogo106.png" class="LogoImg2">--></div></td>
+    <td width="60%" align="center" valign="middle" style="text-align: center"><span class="ReadingTitle">Recommended Reading</span></td>
+    <td width="20%"><div id="LogoBox2"><img onclick="backFunction();" src="img/back-button.png" class="LogoImg2"></div></td>
+  </tr>
+</table>
+            
+        <div id="TheKayCredit">
+          <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">--><a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0099526158/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0099526158&linkId=345b26b6ce031928d9e5b4c3f43cbd90','_system', 'location=yes');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">What I Talk About When I Talk About Running</a></span><br><span class="BookText">In 1982, having sold his jazz bar to devote himself to writing, Murakami began running to keep fit. A year later, he'd completed a solo course from Athens to Marathon, and now, after dozens of such races, not to mention triathlons and a dozen critically acclaimed books, he reflects upon the influence the sport has had on his life and--even more important--on his writing. Equal parts training log, travelogue, and reminiscence, this revealing memoir covers his four-month preparation for the 2005 New York City Marathon and takes us to places ranging from Tokyo's Jingu Gaien gardens, where he once shared the course with an Olympian, to the Charles River in Boston among young women who outpace him.
+What I Talk About When I Talk About Running is rich and revelatory, both for fans of this masterful yet guardedly private writer and for the exploding population of athletes who find similar satisfaction in distance running."<br></span><span class="BookTextLink">
+<!-- <a href="https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>--> <a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0099526158/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0099526158&linkId=345b26b6ce031928d9e5b4c3f43cbd90','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21"_target"_system" style="color: #ffea00;text-decoration:none; font-weight:bold;">Practising The Power Of Now:<BR> Meditations, Exercises and Core Teachings from The Power of Now</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/B004CFBMRY/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=B004CFBMRY&linkId=17f1f3a3cbe9bc509612b872d70770b1','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Born to Run: The Hidden Tribe, the Ultra-Runners, and the Greatest Race the World Has Never Seen</a>
+<br></span><span class="BookText">At the heart of Born to Run lies a mysterious tribe of Mexican Indians, the Tarahumara, who live quietly in canyons and are reputed to be the best distance runners in the world; in 1993, one of them, aged 57, came first in a prestigious 100-mile race wearing a toga and sandals. A small group of the world's top ultra-runners (and the awe-inspiring author) make the treacherous journey into the canyons to try to learn the tribe's secrets and then take them on over a course 50 miles long.
+
+With incredible energy and smart observation, McDougall tells this story while asking what the secrets are to being an incredible runner. Travelling to labs at Harvard, Nike, and elsewhere, he comes across an incredible cast of characters, including the woman who recently broke the world record for 100 miles and for her encore ran a 2:50 marathon in a bikini, pausing to down a beer at the 20 mile mark.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/B004CFBMRY/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=B004CFBMRY&linkId=17f1f3a3cbe9bc509612b872d70770b1','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Buddhism Plain and Simple (Arkana)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/014312319X/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=014312319X&linkId=0e32453894b2b5475cc7fc57bfdd7f45','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">The Running Revolution: How to Run Faster, Farther, and Injury Free For Life</a>  
+</span><br><span class="BookText">From a two-time Olympic coach and creator of the Pose Method who has trained the running elite, an essential guide for all runners seeking to go faster and farther without injury
+Christopher McDougall's Born to Run--and the wildly popular natural running trend it sparked--changed the way we think about running, but it has also prompted many questions: Have we been running the wrong way? And, have we been running in the wrong kind of shoe? What is the safest type of foot strike? How many types are there? And what is a foot strike anyway? No existing guide has clearly addressed these concerns--until now. The Running Revolution provides both beginning and experienced runners with everything they need to know in order to safely and efficiently transition to and master a safer and more biomechanically efficient way of running that is guaranteed to improve performance and minimize wear and tear on the body.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/014312319X/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=014312319X&linkId=0e32453894b2b5475cc7fc57bfdd7f45','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">The Art of Happiness: A Handbook for Living</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1782404732/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1782404732&linkId=11b1526190479bb6a0f832bddcd1b602/','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Running Science: Revealing the science of peak performance</a>  
+</span><br><span class="BookText">Running can encompass the absolute extremes of human performance, from speed to endurance. Running Science uncovers the fundamental science that underpins this ubiquitous sport, bringing together the study of biomechanics, nutrition, psychology, health and injury prevention, and the technical development of shoes and running surfaces: it’s a complete reference.<br></span><span class="BookTextLink">
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1782404732/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1782404732&linkId=11b1526190479bb6a0f832bddcd1b602','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+<!--<a href="https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Zen: Beginner's Guide: Happy, Peaceful and Focused Lifestyle for Everyone (Buddhism, Meditation, Mindfulness, Success) (Positive Psychology Coaching Series Book 7)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1781315256/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1781315256&linkId=cae32ab5dbfe56c707ca64f63cfe09f2','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Running Beyond: Epic Ultra, Trail and Skyrunning Races</a>  
+</span><br><span class="BookText">The ultimate celebration of ultra-running, this is an inspiration for anyone who has ever dreamed of running beyond on the world’s most beautiful and testing races. Exclusive interviews with elite runners and stunning, and unique photography captures the world's most iconic ultra races. With maps and profiles for each race, and filled with striking and evocative images capturing the action and drama of the races – and the men and women who run them – Running Beyondis a beautiful homage to the sport of ultra.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1781315256/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1781315256&linkId=cae32ab5dbfe56c707ca64f63cfe09f2','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">ZEN Training: Methods and Philosophy (Shambhala Classics)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0099558955/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0099558955&linkId=48ea7e2ca8c5e61c15a8d23be01273ca','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Running Like a Girl</a>
+  </span><br><span class="BookText">Alexandra Heminsley had high hopes: the arse of an athlete, the waist of a supermodel, the speed of a gazelle. Defeated by gyms and bored of yoga, she decided to run.
+
+Her first attempt did not end well.
+
+Six years later, she has run five marathons in two continents.
+
+But, as her dad says, you run with your head as much as with your legs. So, while this is a book about running, it's not just about running.
+
+You could say it's about ambition (yes, getting out of bed on a rainy Sunday morning counts), relationships (including talking to the intimidating staff in the trainer shop), as well as your body (your boobs don't have to wobble when you run). But it's also about realising that you can do more than you ever thought possible.
+
+Very funny, very honest and very emotional, whether you're in serious training or thinking about running for the bus, this is a book for anyone who after wine and crisps for supper a few too many times thinks they might . . . just might . . . like to run like a girl.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0099558955/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0099558955&linkId=48ea7e2ca8c5e61c15a8d23be01273ca','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">An Introduction to Zen Training: Sanzen Nyumon</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1408833409/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1408833409&linkId=904e770916af2fbc4a4a5ce12e45fd15','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Eat and Run: My Unlikely Journey to Ultramarathon Greatness </a>
+</span><br><span class="BookText">For nearly two decades, Scott Jurek has been a dominant force in the grueling and growing sport of ultrarunning. Until recently he held the American 24-hour record and he was one of the elite runners profiled in the runaway bestseller Born to Run.
+In Eat and Run, Jurek opens up about his life and career as a champion athlete with a plant-based diet and inspires runners at every level. From his Midwestern childhood hunting, fishing, and cooking for his meat-and-potatoes family to his slow transition to ultrarunning and veganism, Scott’s story shows the power of an iron will and blows apart the stereotypes of what athletes should eat to fuel optimal performance. Full of stories of competition as well as science and practical advice—including his own recipes—Eat and Run will motivate readers and expand their food horizons. <br></span><span class="BookTextLink">
+
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1408833409/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1408833409&linkId=904e770916af2fbc4a4a5ce12e45fd15','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a><!--<a href="https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>--></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">The Eight Gates of Zen: A Program of Zen Training</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0007306202/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0007306202&linkId=2a290ddc60f59a31e28f76715c2119fb','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Just a Little Run Around the World: 5 Years, 3 Packs of Wolves and 53 Pairs of Shoes: 5 Years, 29 Marriage Proposals and 53 Pairs of Shoes</a>  
+</span><br><span class="BookText">After her husband died of cancer, 57-year-old Rosie set off to run around the world, raising money in memory of the man she loved. Followed by wolves, knocked down by a bus, confronted by bears, chased by a naked man with a gun and stranded with severe frostbite, Rosie's breathtaking 20,000-mile solo journey is as gripping as it is inspiring. Rosie's incredible story is a mesmerizing page-turner of the run of her life. It will wake up the sleeping adventurer in you; it will inspire hope, courage and determination in you; but most of all it will convince you to live your life to the full and make every day count.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0007306202/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0007306202&linkId=2a290ddc60f59a31e28f76715c2119fb','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">The Buddha, Geoff and Me: A Modern Story </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1786850540/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1786850540&linkId=cfabfd4c5013d14929d522ea62bfd410','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Beyond Impossible: From Reluctant Runner to Guinness World Record Breaker</a>  
+</span><br><span class="BookText">When Mimi first started jogging on a treadmill as an unfit 36-year-old mother-of-three, she never imagined she would go on to become a World-Record-breaking ultrarunner. This incredible story of how an ordinary mum ran her way into the record books will inspire beginner runners and die-hard marathon devotees alike, proving that, no matter where life takes you, it’s never too late to achieve your dreams and do the impossible.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1786850540/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1786850540&linkId=cfabfd4c5013d14929d522ea62bfd410','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Bodhisattva Blues</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1781311471/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1781311471&linkId=6485af6d084ab00e34c28c85e84e0762','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Runner: A short story about a long run</a>  
+</span><br><span class="BookText">From a school girl running the streets of London to a world record-breaking athlete racing on mountains, long-distance runner Lizzy Hawker is an inspiration to anyone who would like to see how far they can go, running or not. This is the complete story of Lizzy’s journey, uncovering the physical, mental and emotional challenges that runners go through at the edge of human endurance. <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1781311471/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1781311471&linkId=6485af6d084ab00e34c28c85e84e0762','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">How to Cook Your Life: From the ZEN Kitchen to Enlightenment</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/191024094X/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=191024094X&linkId=0a38b368ea1977089a05dde10bffbed2','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">There is No Map in Hell: The Record-Breaking Run Across the Lake District Fells</a>  
+</span><br><span class="BookText">In 2014, Steve Birkinshaw made an attempt at setting a new record. With a background of nearly forty years of running elite orienteering races and extreme-distance fell running over the toughest terrain, if he couldn't do it, surely no one could. But the Wainwrights challenge is in a different league: aspirants need to complete two marathons and over 5,000 metres of ascent every day for a week.
+
+With a foreword by Joss Naylor, There is no Map in Hell recounts Birkinshaw's preparation, training and mile-by-mile experience of the extraordinary and sometimes hellish demands he made of his mind and body, and the physiological aftermath of such a feat. His deep love of the fells, phenomenal strength and tenacity are awe inspiring, and testimony to athletes and onlookers alike that 'in order to attain the impossible, one must attempt the absurd'.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/191024094X/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=191024094X&linkId=0a38b368ea1977089a05dde10bffbed2','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a></span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Returning to Silence: Zen Practice in Everyday Life</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0224091972/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0224091972&linkId=774860c8e63891371de9691bdf8e4489','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Running Free: A Runner’s Journey Back to Nature</a>  
+</span><br><span class="BookText">Richard Askwith wanted more. Not convinced running had to be all about pounding pavements, buying fancy kit and racking up extreme challenges, he looked for ways to liberate himself. His solution: running through muddy fields and up rocky fells, running with his dog at dawn, running because he's being (voluntarily) chased by a pack of bloodhounds, running to get hopelessly, enjoyably lost, running fast for the sheer thrill of it. Running as nature intended. An opponent of the commercialisation of running, Askwith offers a welcome alternative, with practical tips (learned the hard way) on how to both start and keep running naturally – from thawing frozen toes to avoiding a stampede when crossing a field of cows. Running Free is about getting back to the basics of why we love to run.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0224091972/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0224091972&linkId=774860c8e63891371de9691bdf8e4489','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Buddhism For Dummies</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1846684579/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1846684579&linkId=3fdde6d3d415244a033f455ea3cf5270','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Natural Born Heroes: The Lost Secrets of Strength and Endurance</a>  
+</span><br>
+<span class="BookText">When Chris McDougall stumbled across the story of Churchill's 'dirty tricksters', a motley crew of English poets and academics who helped resist the Nazi invasion of Crete, he knew he was on the track of something special. To beat the odds, the tricksters-starving, aging, outnumbered-tapped into an ancient style of fitness: the lost art of heroism. They listened to their instincts, replaced calories with stored bodily fat and used their fascia, the network of tissue which criss-crosses the body, to catapult themselves to superhuman strength and endurance. Soon McDougall was in the middle of a modern fitness revolution taking place everywhere from Parisian parkour routes to state-of-the-art laboratories, and based on the know-how of Shanghai street-fighters and Wild West gunslingers. Just as Born to Run got runners off the treadmill and into nature, Natural Born Heroes will inspire casual athletes to dump the gym membership for cross-training, mud runs and free-running.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>--><a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1846684579/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1846684579&linkId=3fdde6d3d415244a033f455ea3cf5270','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a></span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">The Tibetan Book Of Living And Dying: A Spiritual Classic from One of the Foremost Interpreters of Tibetan Buddhism to the West </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/B0077FAWAE/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=B0077FAWAE&linkId=c2b0ca631abcce77b9a8e447c0e22236','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Feet in the Clouds: A Tale of Fell-Running and Obsession </a>  
+</span><br><span class="BookText">The concept of fell-running is simple: it’s a sport that involves running over mountains – sometimes one, sometimes many. It’s also immensely demanding. While running uphill is a stamina-sapping slog, running pell-mell down the other side requires the agility – and even recklessness – of a mountain goat. And there’s the weather to contend with. This is a portrait of one of the few sports to have remained utterly true to its roots – in which the point is not fame or fortune but to run the ancient, wild landscape, and to be a hero, if at all, within one’s own valley. Feet in the Clouds is a chronicle of a masochistic but admirable sporting obsession, an insight into one of the oldest extreme sports, and a lyrical tribute to Britain’s mountains and the men and women who live among them.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/B0077FAWAE/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=B0077FAWAE&linkId=c2b0ca631abcce77b9a8e447c0e22236','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">The Quantum and the Lotus: A Journey to the Frontiers Where Science and Buddhism Meet</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0571274064/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0571274064&linkId=d3bc4150fcba58d028f89ccdc524a797','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Running with the Kenyans: Discovering the secrets of the fastest people on earth</a>  
+</span><br>
+  <span class="BookText">After years of watching Kenyan athletes win the world's biggest long-distance races, Runner's World contributor Adharanand Finn set out to discover what it was that made them so fast - and to see if he could keep up. Packing up his family, he moved to Iten, Kenya, the running capital of the world, and started investigating. Was it running barefoot to school, the food, the altitude, or something else? At the end of his journey he put his research to the test by running his first marathon, across the Kenyan plains.
+
+This edition includes a new chapter covering the 2012 Olympics.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0571274064/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0571274064&linkId=d3bc4150fcba58d028f89ccdc524a797','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span>  
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Don't Be a Jerk: And Other Practical Advice from Dogen, Japan's Greatest Zen Master </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1760295507/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1760295507&linkId=b387c5af85054480f6bdd368f97921da','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Ultramarathon Man: Confessions of an All-Night Runner</a>  
+</span><br><span class="BookText">Ultrarunning legend Dean Karnazes has run 262 miles - the equivalent of ten marathons - without rest. He has run over mountains, across Death Valley, to the South Pole, and is probably the first person to eat an entire pizza while running. With an insight, candour and humour rarely seen in sports memoirs, Ultramarathon Man has inspired tens of thousands of people - nonrunners and runners alike - to push themselves beyond their comfort zones and simply get out there and run. Ultramarathon Man answers the questions Karnazes is continually asked: - Why do you do it?- How do you do it?- Are you insane? and the follow-up queries:- What, exactly, do you eat?- How do you train to stay in such good shape?<br></span><span class="BookTextLink"><!--"https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1760295507/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1760295507&linkId=b387c5af85054480f6bdd368f97921da','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">Confession of a Buddhist Atheist</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1742377939/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1742377939&linkId=6ebc062d0ddcaacfb1e56a9e70b77ca0','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Run!: 26.2 Stories of Blisters and Bliss</a>  
+</span><br><span class="BookText">In his follow-up to the bestselling Ultramarathon Man, Dean Karnazes is back with more mind-blowing tales of how he pushes his mind and body to limits which are inconceivable to most of us.
+
+In Run! Dean shares the pleasure - and considerable pain - of some of his most memorable adventures, including:
+
+- a gentle 350-mile canter through the surprisingly hilly Australian Outback;
+- his annual attempts at the Badwater Ultramarathon in Death Valley, California (typical temperature: 45 degrees); and
+- the notorious 4 Deserts races, a masochist's delight encompassing four separate 155-mile runs across the Atacama Crossing, the Gobi, the Sahara and Antarctica...with rationed water.
+
+Dean's entertaining and endearing stories are sure to inspire both dedicated and vicarious runners alike.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1742377939/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1742377939&linkId=6ebc062d0ddcaacfb1e56a9e70b77ca0','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">After Buddhism: Rethinking the Dharma for a Secular Age</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0446581844/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0446581844&linkId=b1de7a35da19496f59b18720a9a5b9b6','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">50/50: Secrets I Learned Running 50 Marathons In 50 Days </a>  
+</span><br><span class="BookText">Dean Karnazes has run 350 miles through 3 sleepless nights, ordered pizza during long runs and inspired fans the world over with his adventures. So what does such a man do when he wants the ultimate test of endurance? He runs 50 marathons, in 50 states - in 50 consecutive days. Armed with a road map, a caravan of fellow runners and a dedicated crew, Dean set off on a tour that took him through a volcanic canyon in Maui in high-humidity, 88-degree heat; to an elevation gain of almost 4,000 feet at the Tecumseh Trail Marathon in Indiana to a severed moose leg found alongside a trail in Alaska that compelled him to sprint for safety. Dean shares the secrets of how he pulled off this amazing feat with a determination that defied physical limitations. <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0446581844/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=0446581844&linkId=b1de7a35da19496f59b18720a9a5b9b6','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;text-decoration:none; font-weight:bold;">The Mind Illuminated: A Complete Meditation Guide Integrating Buddhist Wisdom and Brain Science</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1472939689/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1472939689&linkId=7328e1efe86805027d36a7a5b57d1757','_system');"  style="color: #ffea00;text-decoration:none; font-weight:bold;">Run Smart: Using Science to Improve Performance and Expose Marathon Running's Greatest Myths</a>  
+</span><br><span class="BookText">Renowned marathon expert and leading sports scientist Professor John Brewer reveals why many of the concepts surrounding marathon training and running are wrong - and suggests how the latest sports science research transforms the way marathons should be approached.
+
+Run Smart uses the latest scientific research to show how preparing for, and running, marathons can be made easier, and in doing so challenges many of the myths that surround marathon running. 
+<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21" style="color: #ffea00;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1472939689/ref=as_li_tl?ie=UTF8&tag=cyclicalen0b-21&camp=1634&creative=6738&linkCode=as2&creativeASIN=1472939689&linkId=7328e1efe86805027d36a7a5b57d1757','_system');"  style="color: #ffea00;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+          <p><!-- end MainQuote --></p>
+          <p>&nbsp;</p>
+          <table width="96%" border="0" style="padding-top:15px">
+            <tr>
+              <td width="43%"></td>
+              <td width="20%" align="center" valign="middle" style="text-align: center"><div id="LogoBox3"><img onclick="backFunction();" src="img/back-button.png" class="LogoImg2"></div></td>
+              <td width="37%"></td>
+            </tr>
+          </table><p>&nbsp;</p><p>&nbsp;</p>
+        </div>
+    </div>
+   </div></div>
+</div></div></div>
+</div></div> 
+    <script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<!-- end about page -->
+
+</body>
+
+</html>

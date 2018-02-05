@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="js/javascript.js"></script>
+        <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-1.7.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+		
+    }
+
+    function onDeviceReady() {
+		document.addEventListener("backbutton", onBackKeyDown, false);
+		 myFunction();
+   // document.removeEventListener('deviceready', onDeviceReady, false);
+
+    // Set AdMobAds options:
+    admob.setOptions({
+        publisherId:          "ca-app-pub-2461181623439774~3916832351",  // Required
+        interstitialAdId:     "ca-app-pub-2461181623439774/5760020733",  // Optional
+        tappxIdiOS:           "/XXXXXXXXX/Pub-XXXX-iOS-IIII",            // Optional
+        tappxIdAndroid:       "/XXXXXXXXX/Pub-XXXX-Android-AAAA",        // Optional
+        tappxShare:           0.5                                        // Optional
+    });
+
+	admob.createBannerView();
+
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+   /* function onDeviceReady() {
+		 document.addEventListener("backbutton", onBackKeyDown, false);
+		 myFunction();
+    }*/
+	
+	function onBackKeyDown() {
+		/*document.getElementById("Outer2").style.display = "block";
+		document.getElementById("Outer").style.display = "none";
+		document.getElementById("Outer4").style.display = "none";
+		document.getElementById("Outer3").style.display = "none";*/
+		document.getElementById("LogoBoxZindex").style.visibility = "visible";
+	/*	MSApp.terminateApp();
+		window.open("ms-windows-store://review/?ProductId=9mv4pl5bngs1", "_self");
+		alert('backbutton');*/
+    }
+	
+	function ConfirmExit() {
+		document.getElementById("Outer2").style.display = "block"
+		document.getElementById("Outer").style.display = "none";
+		document.getElementById("Outer4").style.display = "none";
+		document.getElementById("Outer3").style.display = "none";;
+		/*MSApp.terminateApp(); - windows exit code*/
+		navigator.app.exitApp();  /* andriod exit code */
+	/*	alert('backbutton');*/
+		 }
+
+    </script>
+       <title>Zen Quotes App</title>
+</head>
+<body onload="onLoad()"><div id="LogoBoxZindex"><div id="ExitScreen">
+  <p style="font-family:Arial;font-weight:bold;color:#ffffff;font-size:1.6em;">Quit?</p>
+                 <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="ConfirmExit();">YES</button>
+              </div> 
+               <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="document.getElementById('LogoBoxZindex').style.visibility = 'hidden';">NO</button>
+              </div> 
+               <div id="StartButtons">
+ 
+  <button class="ExitButton" onclick="window.open('market://details?id=com.kaydownes.ZenQuotes', '_system');">RATE APP</button>
+              </div> 
+</div></div>
+
+<div id="Outer2"><div align="center">
+    <div class="Inner">
+   <!-- test -->  
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div>
+     
+        <h1>Cycling Quotes</h1>  <div class="AboutText">Your daily fix of Cycling Tips, Jokes, Quotes and Annecdotes to educate, entertain and enlighten your mind to help make a positive impact on your cycling adventures...  </div>
+        
+       <div id="StartButtons">
+        <button class="StartmyButton" onclick="var now = new Date(); var start = new Date(now.getFullYear(), 0, 0); var diff = now - start; var oneDay = 1000 * 60 * 60 * 24; var day = Math.floor(diff / oneDay); document.getElementById('Outer').style.display = 'block'; document.getElementById('Outer2').style.display = 'none';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer4').style.display = 'none';getElementById('demo2').innerHTML=car[day];document.getElementById('Texty').innerHTML='Today\'s Quote'; todaysDate();">Today's Quote</button>
+
+  
+  <button class="StartmyButton" onclick="document.getElementById('Outer4').style.display = 'block';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer').style.display = 'none'; document.getElementById('Outer2').style.display = 'none'">About</button>
+
+  
+  <button class="StartmyButton" onclick="select=1;document.getElementById('Outer3').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer2').style.display = 'none';	admob.requestInterstitialAd({
+    autoShowInterstitial: true
+});">Cycling Study</button>
+  
+<!--  <button class="StartmyButton" onclick="Windows.System.Launcher.LaunchUriAsync(new Uri(ms-windows-store://review/?PFN= Microsoft.Office.OneNote_8wekyb3d8bbwe));');">Rate This App</button>-->
+  
+  
+  </div>
+       <blockquote>&nbsp;</blockquote>
+<!-- end QuoteExt --></div><!-- end MainQuote --></div>
+<div align="center">
+  <div id="TheKayCredit"><div class="KayCredit">
+     <!-- <a href="http://www.kaydownes.com" target="_system" style="color: #ffffff;text-decoration:none;">--><a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #ffffff;text-decoration:none; text-shadow: 2px 2px 4px #000000;">Designed & Developed by<br>www.kaydownes.com</a></div>
+</div>
+  <p>&nbsp;</p>
+
+<!-- end div centre --></div> 
+<!-- end div ButtonInner -->
+    </div> <!-- end class Inner -->
+    </div> <!-- end class div center -->
+
+</div>
+<div id="Outer">
+<div align="center">
+    <div class="Inner">
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div>
+     
+        <h1><div id="Texty"></div></h1>      
+        <div class="QuoteText"><p id="demo2"><p><!--Although you may not always be able to avoid difficult situations, you can modify the extent to which you can suffer by how you choose to respond to the situation.</p>--><!--"It is easy to believe we are each wave and forget we are also
+the ocean."--></div>
+<div class="DateText" id="demo"></div>
+<!-- end QuoteExt --></div><!-- end MainQuote --></div>
+<div align="center">
+  <div id="ButtonInner">
+    <div id="MainQuote2"><button class="myButton" onclick="var now = new Date(); var start = new Date(now.getFullYear(), 0, 0); var diff = now - start; var oneDay = 1000 * 60 * 60 * 24; var day = Math.floor(diff / oneDay ); getElementById('demo2').innerHTML=car[day];document.getElementById('Texty').innerHTML='Today\'s Quote'; todaysDate();">Today's<br>Quote</button>
+    
+    </div>
+    
+    <div id="MainQuote2b"><button class="myButton" onclick="getElementById('demo2').innerHTML=car[+Math.floor((Math.random() * 366) + 1)];document.getElementById('Texty').innerHTML='Random Quote'; todaysDate();">Random<br>Quote</button>
+    </div>
+    
+    <div id="MainQuote2">
+      <button class="myButton2" onclick="select=2;document.getElementById('Outer3').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer2').style.display = 'none'">Cycling<br>Study</button></div>
+    
+        <div id="MainQuote2b"><button class="myButton2" onclick="document.getElementById('Outer2').style.display = 'block';document.getElementById('Outer').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer3').style.display = 'none';	admob.requestInterstitialAd({
+    autoShowInterstitial: true
+});">&#9664;&#9664;<br>Back</button></div>
+
+</div> <!-- end buttno inner -->
+    
+  <!--  <div id="TheKayCredit"><div class="KayCreditBlack">Designed & Developed by<br>
+     <!-- <a href="http://www.kaydownes.com" target="_blank" style="color: #000000;text-decoration:none;">www.kaydownes.com</a>--><!--<a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #000000;text-decoration:none;">www.kaydownes.com</a></div>
+  </div>--> <!-- end div button inner -->
+  
+  <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<!-- end div centre --></div> 
+    </div> <!-- end class Inner -->
+    </div> <!-- end class div center -->
+    </div> <!-- end ID outer -->
+
+
+<!-- books page -->
+
+<div id="Outer4">
+<div align="center">
+   <div class="Inner">
+    <div align="center"><div id="MainQuote"><div id="LogoBox"><img src="img/ZinYangLogo75x75.png" class="LogoImg"></div><h1>About</h1>
+          <div class="AboutText">I hope you enjoy using this app. <br>
+            This free version has adverts to reflect the time and effort spent creating it.<br></div>
+            <br><br><br>
+         <div class="AboutText"><span style="font-weight:bold;color:#faa61a;"> Advert Free Version</span><br>
+            For a 100% advert free version of this app click the button below.
+          </div>
+ 
+               <div id="StartButtons">
+ 
+  <button class="StartmyButton"  onclick="window.open('market://details?id=com.kaydownes.ZenBuddhaQuotes', '_system');">Advert Free Version</button>
+    
+          </div> 
+          
+  <div class="AboutText"> Zen / Buddha Quotes is 
+    created by<br>
+    <a href="#" onclick="window.open('http://www.kaydownes.com/','_system');" style="color: #ffffff;text-decoration:none;">www.kaydownes.com</a>
+  </div>
+        <table width="96%" border="0" style="padding-top:15px">
+            <tr>
+              <td width="42%"></td>
+              <td width="20%" align="center" valign="middle" style="text-align: center"><div id="LogoBox3"><img onclick="document.getElementById('Outer2').style.display = 'block';document.getElementById('Outer3').style.display = 'none';document.getElementById('Outer4').style.display = 'none'; document.getElementById('Outer').style.display = 'none';	admob.requestInterstitialAd({
+    autoShowInterstitial: true
+});" src="img/back-button.png" class="LogoImg2"></div></td>
+              <td width="37%"></td>
+            </tr>
+          </table>
+        <br><br>
+        <!--<p></p>-->
+
+            
+           
+        </div> 
+</div><!-- end MainQuote --></div>
+</div></div>  
+
+<!-- end books page -->
+
+<!-- about page-->
+
+<div id="Outer3">
+<div align="center">
+<div class="InnerScrollBooks">
+   <div class="Inner">
+    
+    <div id="MainQuote">
+    
+   <table width="96%" border="0" style="padding-top:15px">
+  <tr>
+    <td width="20%"><div id="LogoBox2"><img onclick="backFunction();" src="img/ZinYangLogo106.png" class="LogoImg2"><!--<img src="img/ZinYangLogo106.png" class="LogoImg2">--></div></td>
+    <td width="60%" align="center" valign="middle" style="text-align: center"><span class="ReadingTitle">Recommended Reading</span></td>
+    <td width="20%"><div id="LogoBox2"><img onclick="backFunction();" src="img/back-button.png" class="LogoImg2"></div></td>
+  </tr>
+</table>
+            
+        <div id="TheKayCredit">
+          <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">--><a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21/','_system', 'location=yes');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Power of Now: A Guide to Spiritual Enlightenment</a></span><br><span class="BookText">The phenomenal bestselling self-help book of its generation - for spiritual followers of the Dalai Lama and Deepak Chopra. Eckhart Tolle demonstrates how to live a healthier and happier life by living in the present moment.
+To make the journey into The Power of Now we will need to leave our analytical mind and its false created self, the ego, behind. Although the journey is challenging, Eckhart Tolle offers simple language and a question and answer format to guide us.<br></span><span class="BookTextLink">
+<!-- <a href="https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>--> <a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340733500/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340733500&linkCode=as2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21"_target"_system" style="color: #faa61a;text-decoration:none; font-weight:bold;">Practising The Power Of Now:<BR> Meditations, Exercises and Core Teachings from The Power of Now</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Practising The Power Of Now:<BR> Meditations, Exercises and Core Teachings from The Power of Now</a>
+<br></span><span class="BookText">Eckhart Tolle's book describes the experience of heightened consciousness that radically transformed his life - and shows how by living in the moment we can also reach a higher state of being where we can find joy and peace and where problems do not exist.
+
+The invaluable companion volume - PRACTISING THE POWER OF NOW - contains all the essential techniques we need to start to put this important book into practice in our own lives. No reader will be complete without it.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340822538/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340822538&linkCode=as2&tag=cyclicalen0b-21','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Buddhism Plain and Simple (Arkana)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Buddhism Plain and Simple (Arkana)</a>  
+</span><br><span class="BookText">This is a book about awareness - it's about being 'awake' and in touch with what is going on here and now. Practical and down-to-earth, it deals exclusively with the present, not with speculation, theory or belief in some far-off time and place. The teachings of the Buddha are plain and straightforward, and because they remain focused on the moment they are just as relevant now as they have ever been. BUDDHISM PLAIN AND SIMPLE is the book for anyone wanting to discover, or rediscover, the essence of Buddhism.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0140195963/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0140195963&linkCode=as2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">The Art of Happiness: A Handbook for Living</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Art of Happiness: A Handbook for Living</a>  
+</span><br><span class="BookText">By The Dalai Lama -  In this unique and important book, one of the world's great spiritual leaders offers his practical wisdom and advice on how we can overcome everyday human problems and achieve lasting happiness. The Art of Happiness is a highly accessible guide for a western audience, combining the Dalai Lama's eastern spiritual tradition with Dr Howard C. Cutler's western perspective. Covering all key areas of human experience, they apply the principles of Tibetan Buddhism to everyday problems and reveal how one can find balance and complete spiritual and mental freedom. For the many who wish to understand more about the Dalai Lama's approach to living, there has never been a book which brings his beliefs so vividly into the real world.<br></span><span class="BookTextLink">
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+<!--<a href="https://www.amazon.co.uk/gp/product/0340750154/ref=as_li_tl?ie=UTF8&camp=1634&creative=6738&creativeASIN=0340750154&linkCode=as2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Zen: Beginner's Guide: Happy, Peaceful and Focused Lifestyle for Everyone (Buddhism, Meditation, Mindfulness, Success) (Positive Psychology Coaching Series Book 7)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Zen: Beginner's Guide: Happy, Peaceful and Focused Lifestyle for Everyone (Buddhism, Meditation, Mindfulness, Success) (Positive Psychology Coaching Series Book 7)</a>  
+</span><br><span class="BookText">The purpose of this work is to show you how to apply and utilize the teachings and essence of Zen in everyday life in the Western society. I’m not really an “absolute truth seeker” unworldly type of person - I just believe in practical plans and blueprints that actually help in living a better life. Of course I will tell you about the origin of Zen and the traditional ways of practicing it, but I will also show you my side of things, my personal point of view and translation of many Zen truths into a more “contemporary” and practical language. <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1503322610?ie=UTF8&camp=1634&creativeASIN=1503322610&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">ZEN Training: Methods and Philosophy (Shambhala Classics)</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">ZEN Training: Methods and Philosophy (Shambhala Classics)</a>
+  </span><br><span class="BookText">"Zen Training " is a comprehensive handbook for "zazen," seated meditation practice, and an authoritative presentation of the Zen path. The book marked a turning point in Zen literature in its critical reevaluation of the enlightenment experience, which the author believes has often been emphasized at the expense of other important aspects of Zen training. In addition, "Zen Training" goes beyond the first flashes of enlightenment to explore how one lives as well as trains in Zen. The author also draws many significant parallels between Zen and Western philosophy and psychology, <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1590302834?ie=UTF8&camp=1634&creativeASIN=1590302834&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">An Introduction to Zen Training: Sanzen Nyumon</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">An Introduction to Zen Training: Sanzen Nyumon</a>
+</span><br><span class="BookText">AN INTRODUCTION TO ZEN TRAINING is a translation of Sanzen Nyumon, a key text by one of the foremost Zen teachers of the twentieth century. Written to provide a solid introduction to the physical nature of Zen training, this text discusses breath, pain, posture, drowsiness, state of mind, and physiology, as well as the context in which this training takes on meaning.<br></span><span class="BookTextLink">
+
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a><!--<a href="https://www.amazon.co.uk/gp/product/0804832471?ie=UTF8&camp=1634&creativeASIN=0804832471&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>--></span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">The Eight Gates of Zen: A Program of Zen Training</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Eight Gates of Zen: A Program of Zen Training</a>  
+</span><br><span class="BookText">This accessible introduction to the philosophy and practice of Zen Buddhism includes a program of study that encompasses practically every aspect of life. The American Zen teacher John Daido Loori shows us that Zen practice should include not only meditation, the study of Zen literature and liturgy, and moral and ethical action, but should also manifest in work, artistic, and everyday activities.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1570629528?ie=UTF8&camp=1634&creativeASIN=1570629528&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">The Buddha, Geoff and Me: A Modern Story </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Buddha, Geoff and Me: A Modern Story</a>  
+</span><br><span class="BookText">In The Buddha, Geoff and Me Edward Canfor-Dumas brings all his skills to bear in an absorbing story of everyday city life, where the characters stand out with all their human strengths and weaknesses, and the ending brings Ed - and perhaps all of us? - a hope we didn't necessarily expect.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1844135683?ie=UTF8&camp=1634&creativeASIN=1844135683&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Bodhisattva Blues</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Bodhisattva Blues</a>  
+</span><br><span class="BookText">The sequel to The Buddha, Geoff and Me. <br>Edward Canfor-Dumas, award-winning screen writer and novelist, this is an urban story with a twist and a wry appreciation of the challenges we face every day - whether we're muddling by, or, like Ed, suffering from a severe case of the bodhisattva blues...
+
+A book for everyone who's ever wondered whether enlightenment really is compatible with the daily commute.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1846044294?ie=UTF8&camp=1634&creativeASIN=1846044294&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">How to Cook Your Life: From the ZEN Kitchen to Enlightenment</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">How to Cook Your Life: From the ZEN Kitchen to Enlightenment</a>  
+</span><br><span class="BookText">In the thirteenth century, Zen master Dogen—perhaps the most significant of all Japanese philosophers, and the founder of the Japanese Soto Zen sect—wrote a practical manual of Instructions for the Zen Cook . In drawing parallels between preparing meals for the Zen monastery and spiritual training, he reveals far more than simply the rules and manners of the Zen kitchen; he teaches us how to "cook," or refine our lives. In this volume Kosho Uchiyama Roshi undertakes the task of elucidating Dogen's text for the benefit of modern-day readers of Zen.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1590302915?ie=UTF8&camp=1634&creativeASIN=1590302915&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a></span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Returning to Silence: Zen Practice in Everyday Life</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Returning to Silence: Zen Practice in Everyday Life</a>  
+</span><br><span class="BookText">For twenty-five hundred years Buddhism has taught that everyone is Buddha—already enlightened, lacking nothing. But still there is the question of how we can experience that truth in our lives. In this book, Dainin Katagiri points to the manifestation of enlightenment right here, right now, in our everyday routine. Genuineness of practice lies in "just living" our lives wholeheartedly. The Zen practice of sitting meditation (zazen) is this not a means to an end but is the activity of enlightenment itself. That is why Katagiri Roshi says, "Don't expect enlightenment—just sit down!" <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0877734313?ie=UTF8&camp=1634&creativeASIN=0877734313&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Buddhism For Dummies</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Buddhism For Dummies</a>  
+</span><br><span class="BookText">Buddhism, one of the world′s most widely practiced religions, is a fascinating yet complex eastern religion that is rapidly spreading throughout western civilization. What does it mean to be a Buddhist? What are the fundamental beliefs and history behind this religion? Buddhism For Dummies explores these questions and more in this updated guide to Buddhist culture. You′ll gain an understanding of the origins of this ancient practice and how they′re currently applied to everyday life.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>--><a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/111802379X?ie=UTF8&camp=1634&creativeASIN=111802379X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a></span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">The Tibetan Book Of Living And Dying: A Spiritual Classic from One of the Foremost Interpreters of Tibetan Buddhism to the West </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Tibetan Book Of Living And Dying: A Spiritual Classic from One of the Foremost Interpreters of Tibetan Buddhism to the West</a>  
+</span><br><span class="BookText">Written by the Buddhist meditation master and popular international speaker Soygal Rinpoche, this highly acclaimed book clarifies the majestic vision of life and death that underlies the Tibetan Buddhist tradition. It includes not only a lucid, inspiring and complete introduction to the practice of meditation but also advice on how to care for the dying with love and compassion, and how to bring them help of a spiritual kind. But there is much more besides in this classic work, which was written to inspire all who read it to begin the journey to enlightenment and so become 'servants of peace.'<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1846041058?ie=UTF8&camp=1634&creativeASIN=1846041058&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">The Quantum and the Lotus: A Journey to the Frontiers Where Science and Buddhism Meet</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Quantum and the Lotus: A Journey to the Frontiers Where Science and Buddhism Meet</a>  
+</span><br>
+  <span class="BookText">Matthieu Ricard trained as a molecular biologist, working in the lab of a Nobel prize winning scientist, but when he read some Buddhist philosophy, he became drawn to Buddhism. Eventually he left his life in science to study with Tibetan teachers, and he is now a Buddhist monk and translator for the Dalai Lama. The Quantum and the Lotus is the rich and inspiring result of a deeply interesting dialogue between Western science and Buddhist philosophy. This remarkable book will contributes a better understanding of the true nature of our world and the way we live our lives. <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1400080797?ie=UTF8&camp=1634&creativeASIN=1400080797&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span>  
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Don't Be a Jerk: And Other Practical Advice from Dogen, Japan's Greatest Zen Master </a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Don't Be a Jerk: And Other Practical Advice from Dogen, Japan's Greatest Zen Master</a>  
+</span><br><span class="BookText">The Shobogenzo is a revered but seldom-read 800-year-old Zen Buddhism classic. Great books often meet such fates but Brad Warner, a Zen priest who is a tad contrary by nature, has long been drawn to this writing. While Warner is sometimes irreverent and always entertaining he is also an astute scholar who sees very modern psychological concepts in Dogen, as well as wisdom on things like feminism and reincarnation. Finally, and most provocatively, Warner shows Dogen offering a Middle Way between the currently raging debate between science and religion. While Warner s writings reach readers not often prone to such study, Warner s book sales attest to the fact that his thinking is as wise as it is colloquial, as profound as it is practical.<br></span><span class="BookTextLink"><!--"https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/1608683885?ie=UTF8&camp=1634&creativeASIN=1608683885&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">Confession of a Buddhist Atheist</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">Confession of a Buddhist Atheist</a>  
+</span><br><span class="BookText">"Does Buddhism require faith? Can an atheist or agnostic follow the Buddha s teachings without believing in reincarnation or organized religion? 
+This is one man s confession." <br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0385527071?ie=UTF8&camp=1634&creativeASIN=0385527071&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">After Buddhism: Rethinking the Dharma for a Secular Age</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">After Buddhism: Rethinking the Dharma for a Secular Age</a>  
+</span><br><span class="BookText">A renowned Buddhist teacher's magnum opus, based on his fresh reading of the tradition's earliest texts Some twenty-five centuries after the Buddha started teaching, his message continues to inspire people across the globe, including those living in predominantly secular societies. What does it mean to adapt religious practices to secular contexts? This original and provocative book presents a new framework for understanding the remarkable spread of Buddhism in today's globalized world. It also reminds us of what was so startling about the Buddha's vision of human flourishing.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/030020518X?ie=UTF8&camp=1634&creativeASIN=030020518X&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+
+  <div class="BookTextTitle"><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;text-decoration:none; font-weight:bold;">The Mind Illuminated: A Complete Meditation Guide Integrating Buddhist Wisdom and Brain Science</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none; font-weight:bold;">The Mind Illuminated: A Complete Meditation Guide Integrating Buddhist Wisdom and Brain Science</a>  
+</span><br><span class="BookText">Providing step-by-step guidance for every stage of the meditation path, this uniquely comprehensive guide for a Western audience combines the wisdom from the teachings of the Buddha with the latest research in cognitive psychology and neuroscience. Clear and friendly, this in-depth practice manual builds on the nine-stage model of meditation originally articulated by the ancient Indian sage Asanga, crystallizing the entire meditative journey into 10 clearly-defined stages.<br></span><span class="BookTextLink"><!--<a href="https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21" style="color: #faa61a;">Click to visit Store</a>-->
+<a href="#" onclick="window.open('https://www.amazon.co.uk/gp/product/0990847705?ie=UTF8&camp=1634&creativeASIN=0990847705&linkCode=xm2&tag=cyclicalen0b-21/','_system');"  style="color: #faa61a;text-decoration:none;">Click to visit Store</a>
+</span></div>
+  
+          <p><!-- end MainQuote --></p>
+          <p>&nbsp;</p>
+          <table width="96%" border="0" style="padding-top:15px">
+            <tr>
+              <td width="43%"></td>
+              <td width="20%" align="center" valign="middle" style="text-align: center"><div id="LogoBox3"><img onclick="backFunction();" src="img/back-button.png" class="LogoImg2"></div></td>
+              <td width="37%"></td>
+            </tr>
+          </table><p>&nbsp;</p><p>&nbsp;</p>
+        </div>
+    </div>
+   </div></div>
+</div></div></div>
+</div></div> 
+    <script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
+<script type="text/javascript" src="cordova.js"></script>
+<!-- end about page -->
+
+</body>
+
+</html>

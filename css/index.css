@@ -1,0 +1,1701 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+/** {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);  make transparent link selection, adjust last value opacity 0 to 1.0 
+}*/
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' 
+	background:url(../img/forest.jpg) no-repeat center top;
+	background-size: cover;
+	    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -ms-content-zooming: none;*/
+
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+	overflow:hidden;
+	background-color:#000000;
+	color:#ffffff;
+}
+
+#LogoBoxZindex {
+  position: absolute;
+        top: 80px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    z-index: 13;
+	visibility:hidden;
+
+		}
+
+#ExitScreen {
+	text-align:center;
+	/*border-radius: 25px;*/
+	background-color:#000000;
+	height:auto;                   /* text area height */
+    width:60%;
+	/*margin-top:30px;*/
+	margin: 0 auto;
+	padding-top: 8px;
+	padding-bottom: 20px;
+	border:1px solid #ffffff;
+}
+
+.ExitButton {
+	box-sizing: border-box;
+	background-color:#000000;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:1.2em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	margin-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	}
+.ExitButton:hover {
+	background-color:#ffffff;
+}
+.ExitmyButton:active {
+	position:relative;
+	}
+
+
+.ReadingmyButton {
+	box-sizing: border-box;
+	background-color:#000000;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffea00;
+	font-family:Arial;
+	font-size:1em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	/*margin-bottom:12px;*/
+	text-decoration:none;
+	width: 100%;
+	min-height:50px;/**/
+	height: auto;
+	}
+.ReadingmyButton:hover {
+	background-color:#ffea00;
+}
+.ReadingmyButton:active {
+	position:relative;
+	top:1px;
+	outline: 0;
+}
+
+.StartmyButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.1em;
+	font-weight:bold;
+	padding-top:8px;
+	padding-bottom:8px;
+	margin-bottom:10px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	}
+.StartmyButton:hover {
+	background-color:#ffffff;
+}
+.StartmyButton:active {
+	position:relative;
+	}
+
+.StartmyButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.StartmyButton2:hover {
+	background-color:#ffea00;
+}
+.StartmyButton2:active {
+	position:relative;
+	top:1px;
+}
+
+.myButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1em;
+	font-weight:bold;
+	padding-top:18px;
+	padding-bottom:18px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	outline: 0;
+	}
+.myButton:hover {
+	background-color:#ffffff;
+}
+.myButton:active {
+	position:relative;
+	}
+
+.myButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1em;
+	font-weight:bold;
+	padding-top:18px;
+	padding-bottom:18px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+	outline: 0;
+}
+.myButton2:hover {
+	background-color:#ffea00;
+}
+.myButton2:active {
+	position:relative;
+	}
+
+.KayCredit{
+	color: #ffffff; 
+    font-size:0.8em;
+    font-weight:bold;
+    text-align:center;
+	margin-top:0px;
+	padding-bottom:15px;
+}
+
+.KayCreditBlack{
+	color: #000000; 
+    font-size:0.8em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.KayCredit:hover{
+	color: #ffffff; 
+    font-size:0.8em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+
+#LogoBox {
+	margin: auto;
+	width:70px;
+	height:70px;
+	margin-top:0px;
+	margin-bottom:25px;
+		}
+		
+#LogoImgZindex {
+	
+    margin: 0 auto;
+    width: 400px;
+    background: khaki;
+
+}
+
+#LogoBox2 {
+	margin: auto;
+	width:100%;
+	height:100%;
+	float:right;
+	}
+
+#Outer {
+	  height:100vh;                   /* text area height */
+    width:100%;
+	
+background:url("../img/sky3.jpg") no-repeat center top;
+	background-size: cover;
+	background-attachment: fixed; /* stops background scroll */
+	border: 1px solid black;
+	overflow-y: scroll;
+}
+
+#Outer2 {
+	height:100vh;                   /* text area height */
+    width:100%;
+	border: 1px solid black;
+	background:url(   "../img/Buddha.jpg") no-repeat center top;
+	background-size: cover;
+	background-attachment: fixed;
+	overflow-y: scroll;
+	/*background-color:#333333;*/
+}
+
+#Outer3 {   /* books page */
+	position: absolute;
+	height:100%;                   /* text area height */
+    width:100%;
+	border: 1px solid black;
+	background-color:#333333;
+	overflow-y: scroll;
+}
+
+#Outer4 {     /* about page */
+	height:100vh;                   /* text area height */
+    width:100%;
+	border: 1px solid black;
+		background:url(   "../img/fish3.jpg") no-repeat center top;
+		background-size: cover;
+		background-attachment: fixed;
+		overflow-y: scroll;
+}
+
+#MainQuote {
+	text-align:center;
+	border-radius: 25px;
+	background-color:rgba(0, 0, 0, 0.5);
+	height:auto;                   /* text area height */
+    width:99%;
+	margin-top:15px;
+}
+
+#ButtonInner {
+	overflow:auto;
+    width:96%; /*90%;   text area width */
+	max-width:500px;                 
+    text-align:center;
+    padding:0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+}
+
+#MainQuote2 {
+	height:auto;                   /* text area height */
+    width:23%;
+	float:left;
+	margin-top:20px;
+	margin-right:1%;
+	margin-left:1%;
+}
+
+#MainQuote2b {
+	height:auto;                   /* text area height */
+    width:23%;
+	margin-right:1%;
+	margin-left:1%;
+	float:left;
+	margin-top:20px;
+	
+}
+
+#MainQuote3 {
+	height:auto;                   /* text area height */
+    width:48%;
+	float:right;
+	margin-top:20px;
+	margin-left:2%;
+}
+
+#AboutTop {
+	height:auto;                   /* text area height */
+    width:18%;
+	float:left;
+	margin-top:15px;
+	margin-left:10px;
+	min-height:50px;
+}
+
+#AboutTop2 {
+	height:auto;                   /* text area height */
+    width:52%;
+	float:left;
+	margin-top:10px;
+	min-height:50px;
+	max-height:106px;
+	text-align: center;
+	vertical-align: middle; 
+	display: table;
+}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#AboutTop3 {
+	height:auto;                   /* text area height */
+    width:17%;
+	float:right;
+	margin-top:15px;
+	margin-right:15px;
+	min-height:50px;
+}
+
+#StartButtons {
+	height:auto;                   /* text area height */
+   	margin: auto;
+	margin-top:20px;
+	width:60%;
+}
+
+
+#TheKayCredit {
+	height:auto;                   /* text area height */
+    width:100%;
+	margin-top:0px;
+	clear: both;
+	
+}
+
+.InnerScrollBooks {
+/* -ms-touch-action: pan-y; 
+overflow: scroll;*/
+}
+/* Portrait layout (default) */
+.Inner {	
+	min-height:100%;
+	overflow:auto;
+    width:90%; /*90%;         text area width */
+	max-width: 700px;
+    /*margin: auto;*/
+    text-align:center;
+    padding:0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+}
+
+#TopRowInner {
+	overflow:auto;
+    width:90%; /*90%;   text area width */
+	max-width:500px;                 
+    text-align:center;
+    padding:0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+}
+
+
+h1 {
+	color: #ffea00;
+    font-size:1.5em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+	padding-bottom:10px;
+}
+
+.ReadingText {
+	color: #ffea00;
+    font-size:1.4em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    text-align:center;
+	padding-bottom:15px;
+	vertical-align: middle;  
+}
+
+.ReadingTitle {
+	color: #ffea00;
+    font-size:1.4em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    text-align:center;
+	vertical-align: middle;  
+}
+
+.BookText {
+	color: #ffffff;
+    font-size:0.8em;
+    font-weight:normal;
+   /* margin-left:20px;*/
+    overflow:visible;
+    text-align:left;
+	/*padding-top:15px;*/
+}
+
+.AboutText {
+	color: #ffffff;
+    font-size:1.2em;
+    font-weight:normal;
+  margin-left:20px;
+  margin-right:20px;
+    overflow:visible;
+    text-align:middle;
+}
+
+.BookTextLink {
+	color: #ffea00;
+    font-size:1em;
+    font-weight:normal;
+    overflow:visible;
+    text-align:left;
+}
+
+.BookTextTitle {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+a.BookTextTitle:link {
+	color: #ffea00;
+    font-size:1.2em;
+  font-weight:bold;
+}
+
+a.BookTitleLink:link {
+	color: #ffea00;
+    font-size:1.2em;
+  font-weight:bold;
+}
+
+a.BookTitle:link {
+	color: #ffea00;
+    font-size:1.4em;
+  font-weight:normal;
+}
+
+a.BookTextTitle:visited {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+.BookTitleLink {
+	color: #ffea00;
+    font-size:1em;
+    font-weight:normal;
+   /* margin-left:20px;*/
+    overflow:visible;
+    text-align:left;
+	/*padding-top:15px;*/
+}
+
+.QuoteText {
+    font-size:1.4em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 9px 5px 9px;
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+	}
+.SigText {
+  /*  font-size:1.2em; */
+    font-weight:normal;
+    overflow:visible;
+    /*padding:0px 9px 5px 9px;*/
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+    font-style: italic;
+	}
+	
+.DateText {
+    font-size:1.2em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 5px 5px 5px;
+    text-align:center;
+	color: #ffea00;
+	padding-bottom:15px;
+	}
+
+.LogoImg {
+    Padding-top:15px;
+	Padding-bottom:20px;
+	width:100%;
+	height:auto;
+}
+
+.LogoImg2 {
+    width:100%;
+	height:auto;
+	cursor: pointer;
+	}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/*  Media Queries */
+
+
+@media (min-width: 350px) { /*  360x640 screen size */
+
+#MainQuote {
+	text-align:center;
+	border-radius: 25px;
+	background-color:rgba(0, 0, 0, 0.5);
+	height:auto;                   /* text area height */
+    width:99%;
+	margin-top:30px;
+}
+
+#LogoBox {
+	margin: auto;
+	width:90px;
+	height:90px;
+	margin-top:30px;
+	margin-bottom:40px;
+		}
+	
+#LogoBox2 {
+	margin: auto;
+	width:100%;
+	height:100%;
+	float:right;
+	}
+
+.LogoImg {
+    Padding-top:25px;
+	Padding-bottom:25px;
+	width:100%;
+	height:auto;
+}
+
+.LogoImg2 {
+    width:100%;
+	height:auto;
+	cursor: pointer;
+	}
+
+h1 {
+    color: #ffea00;
+    font-size:2em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:5px;
+    text-align:center;
+    padding-bottom:15px;}
+
+.AboutText {
+    color: #ffffff;
+    font-size:1.4em;
+    font-weight:normal;
+    margin-left:20px;
+    margin-right:20px;
+    overflow:visible;
+    text-align:middle;
+}
+
+.StartmyButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.2em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	margin-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	outline: 0;
+	}
+.StartmyButton:hover {
+	background-color:#ffffff;
+}
+.StartmyButton:active {
+	position:relative;
+	}
+
+.myButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.1em;
+	font-weight:bold;
+	padding-top:18px;
+	padding-bottom:18px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	}
+.myButton:hover {
+	background-color:#ffffff;
+}
+.myButton:active {
+	position:relative;
+	}
+
+.myButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.1em;
+	font-weight:bold;
+	padding-top:18px;
+	padding-bottom:18px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.myButton2:hover {
+	background-color:#ffea00;
+}
+.myButton2:active {
+	position:relative;
+	}
+
+#TheKayCredit {
+	height:auto;                   /* text area height */
+    width:100%;
+	margin-top:20px;
+	clear: both;
+	
+}
+
+.KayCredit{
+    color: #ffffff; /*ffea00;*/
+    font-size:1.2em;
+    font-weight:bold;
+    text-align:center;
+padding-bottom:15px;
+}
+
+.KayCredit:hover{
+    color: #ffffff; 
+    font-size:1.2em;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:15px;
+}
+
+.KayCreditBlack{
+    color: #000000; /*ffea00;*/
+    font-size:1.4em;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:15px;
+}
+.KayCreditBlack:hover{
+    color: #000000; 
+    font-size:1.4em;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:15px;
+}
+
+
+.QuoteText {
+    font-size:1.8em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 9px 5px 9px;
+    text-align:center;
+    color: white;
+    padding-bottom:15px;
+    }
+.SigText {
+   /* font-size:1.6em; */
+    font-weight:normal;
+    overflow:visible;
+    /*padding:0px 9px 5px 9px;*/
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+    font-style: italic;
+	}
+	
+.DateText {
+    font-size:1.6em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 5px 5px 5px;
+    text-align:center;
+    color: #ffea00;
+    padding-bottom:15px;	
+	}
+
+.ReadingTitle {
+    color: #ffea00;
+    font-size:1.6em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    text-align:center;
+    vertical-align: middle;  
+}
+
+.BookText {
+	color: #ffffff;
+    font-size:1em;
+    font-weight:normal;
+   /* margin-left:20px;*/
+    overflow:visible;
+    text-align:left;
+	/*padding-top:15px;*/
+}
+
+.BookTextLink {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:normal;
+    overflow:visible;
+    text-align:left;
+}
+
+.BookTextTitle {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+a.BookTextTitle:link {
+	color: #ffea00;
+    font-size:1.2em;
+  font-weight:bold;
+}
+
+a.BookTextTitle:visited {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+}
+
+
+
+@media (min-width: 450px) { /*  480x800/853 screen size */
+
+#LogoBox {
+	margin: auto;
+	width:120px;
+	height:120px;
+	margin-top:30px;
+	margin-bottom:40px;
+		}
+	
+#LogoBox2 {
+	margin: auto;
+	width:100%;
+	height:100%;
+	float:right;
+	}
+
+.LogoImg {
+    Padding-top:25px;
+	Padding-bottom:25px;
+	width:100%;
+	height:auto;
+}
+
+.LogoImg2 {
+    width:100%;
+	height:auto;
+	cursor: pointer;
+	}
+
+h1 {
+    color: #ffea00;
+    font-size:2.6em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:5px;
+    text-align:center;
+    padding-bottom:15px;}
+
+.AboutText {
+    color: #ffffff;
+    font-size:1.8em;
+    font-weight:normal;
+    margin-left:20px;
+    margin-right:20px;
+    overflow:visible;
+    text-align:middle;
+}
+
+.StartmyButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.6em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	margin-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	}
+.StartmyButton:hover {
+	background-color:#ffffff;
+}
+.StartmyButton:active {
+	position:relative;
+	}
+
+.myButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.4em;
+	font-weight:bold;
+	padding-top:18px;
+	padding-bottom:18px;
+	text-decoration:none;
+	width: 100%;
+	/*min-height:80px;*/
+	height: auto;
+	}
+.myButton:hover {
+	background-color:#ffffff;
+}
+.myButton:active {
+	position:relative;
+	}
+
+.myButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:1.4em;
+	font-weight:bold;
+	padding-top:18px;
+	padding-bottom:18px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.myButton2:hover {
+	background-color:#ffea00;
+}
+.myButton2:active {
+	position:relative;
+	}
+
+#TheKayCredit {
+	height:auto;                   /* text area height */
+    width:100%;
+	margin-top:20px;
+	clear: both;
+	
+}
+
+.KayCredit{
+    color: #ffffff; /*ffea00;*/
+    font-size:1.4em;
+    font-weight:bold;
+    text-align:center;
+padding-bottom:15px;
+}
+
+.KayCredit:hover{
+    color: #ffffff; 
+    font-size:1.4em;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:15px;
+}
+
+.KayCreditBlack{
+    color: #000000; /*ffea00;*/
+    font-size:1.4em;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:15px;
+}
+.KayCreditBlack:hover{
+    color: #000000; 
+    font-size:1.4em;
+    font-weight:bold;
+    text-align:center;
+    padding-bottom:15px;
+}
+
+
+.QuoteText {
+    font-size:2.4em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 9px 5px 9px;
+    text-align:center;
+    color: white;
+    padding-bottom:15px;
+    }
+.SigText {
+   /* font-size:1.8em; */
+    font-weight:normal;
+    overflow:visible;
+    /*padding:0px 9px 5px 9px;*/
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+    font-style: italic;
+	}
+	
+.DateText {
+    font-size:1.8em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 5px 5px 5px;
+    text-align:center;
+    color: #ffea00;
+    padding-bottom:15px;	
+	}
+
+.ReadingTitle {
+    color: #ffea00;
+    font-size:2em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    text-align:center;
+    vertical-align: middle;  
+}
+
+.BookText {
+	color: #ffffff;
+    font-size:1.2em;
+    font-weight:normal;
+   /* margin-left:20px;*/
+    overflow:visible;
+    text-align:left;
+	/*padding-top:15px;*/
+}
+
+.BookTextLink {
+	color: #ffea00;
+    font-size:1.5em;
+    font-weight:normal;
+    overflow:visible;
+    text-align:left;
+}
+
+.BookTextTitle {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+a.BookTextTitle:link {
+	color: #ffea00;
+    font-size:1.2em;
+  font-weight:bold;
+}
+
+a.BookTextTitle:visited {
+	color: #ffea00;
+    font-size:1.2em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+}
+
+
+@media (min-width: 590px) { /*  600px screen size */
+
+.BookText {
+	color: #ffffff;
+    font-size:1.4em;
+    font-weight:normal;
+    overflow:visible;
+    text-align:left;
+}
+
+.BookTextLink {
+	color: #ffea00;
+    font-size:1.5em;
+    font-weight:normal;
+    overflow:visible;
+    text-align:left;
+}
+
+.BookTextTitle {
+	color: #ffea00;
+    font-size:1.4em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+a.BookTextTitle:link {
+	color: #ffea00;
+    font-size:1.4em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+a.BookTextTitle:visited {
+	color: #ffea00;
+    font-size:1.4em;
+    font-weight:bold;
+    margin-left:20px;
+	margin-right:20px;
+    overflow:visible;
+    text-align:left;
+	padding-top:15px;
+}
+
+.AboutText {
+	color: #ffffff;
+    font-size:2.2em; /*2.2*/
+    font-weight:normal;
+  margin-left:20px;
+  margin-right:20px;
+    overflow:visible;
+    text-align:middle;
+	/*padding-top:15px;*/
+}
+
+.ReadingTitle {
+	color: #ffea00;
+    font-size:3.6em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    text-align:center;
+	vertical-align: middle;  
+}
+
+#LogoBox {
+	margin: auto;
+	width:130px;
+	height:130px;
+	margin-bottom:60px;
+	margin-top:20px;
+	}
+.myButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2em;
+	font-weight:bold;
+	padding-top:22px;
+	padding-bottom:22px;
+	text-decoration:none;
+	width: 100%;
+	min-height:80px;
+	height: auto;
+	}
+.myButton:hover {
+	background-color:#ffffff;
+}
+.myButton:active {
+	position:relative;
+}
+
+.myButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2em;
+	font-weight:bold;
+	padding-top:22px;
+	padding-bottom:22px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.myButton2:hover {
+	background-color:#ffea00;
+}
+.myButton2:active {
+	position:relative;
+}
+
+.StartmyButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	min-height:80px;
+	height: auto;
+	}
+.StartmyButton:hover {
+	background-color:#ffffff;
+}
+.StartmyButton:active {
+	position:relative;
+}
+
+.StartmyButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.StartmyButton2:hover {
+	background-color:#ffea00;
+}
+.StartmyButton2:active {
+	position:relative;
+}
+
+
+.QuoteText {
+    font-size:2.6em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 9px 5px 9px;
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+	}
+.SigText {
+ /*   font-size:2.2em; */
+    font-weight:normal;
+    overflow:visible;
+    /*padding:0px 9px 5px 9px;*/
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+    font-style: italic;
+	}
+	
+h1 {
+	color: #ffea00;
+    font-size:3.2em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:5px;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.DateText {
+    font-size:2.2em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 5px 5px 5px;
+    text-align:center;
+	color: #ffea00;
+	padding-bottom:15px;
+	}
+	
+.KayCredit{
+	color: #ffffff; /*ffea00;*/
+    font-size:1.8em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.KayCreditBlack{
+	color: #000000; /*ffea00;*/
+    font-size:1.8em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.KayCredit:hover{
+	color: #ffffff; /*ffea00;*/
+    font-size:1.8em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+	
+#MainQuote2 {
+	height:auto;                   /* text area height */
+    width:48%;
+	float:left;
+	margin-top:20px;
+}
+
+#MainQuote2b {
+	height:auto;                   /* text area height */
+    width:48%;
+	float:left;
+	margin-top:20px;
+	
+}
+
+#MainQuote3 {
+	height:auto;                   /* text area height */
+    width:100%;
+	float:right;
+	margin-top:20px;
+	
+}
+
+#ButtonInner {
+	overflow:auto;
+    width:90%; /*90%;   text area width */
+	max-width:500px;                 
+    text-align:center;
+    padding:0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+ }
+
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 710px) { /*  720screen size */
+
+.AboutText {
+	color: #ffffff;
+    font-size:3.2em; /*2.2*/
+    font-weight:normal;
+  margin-left:20px;
+  margin-right:20px;
+    overflow:visible;
+    text-align:middle;
+	/*padding-top:15px;*/
+}
+
+.ReadingTitle {
+	color: #ffea00;
+    font-size:3.6em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    text-align:center;
+	vertical-align: middle;  
+}
+
+#LogoBox {
+	margin: auto;
+	width:160px;
+	height:160px;
+	margin-bottom:40px;
+	margin-top:20px;
+	}
+	
+.myButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2.8em;
+	font-weight:bold;
+	padding-top:22px;
+	padding-bottom:22px;
+	text-decoration:none;
+	width: 100%;
+	min-height:80px;
+	height: auto;
+	}
+.myButton:hover {
+	background-color:#ffffff;
+}
+.myButton:active {
+	position:relative;
+}
+
+.myButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2.8em;
+	font-weight:bold;
+	padding-top:22px;
+	padding-bottom:22px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.myButton2:hover {
+	background-color:#ffea00;
+}
+.myButton2:active {
+	position:relative;
+	/*top:1px;*/
+}
+
+.StartmyButton {
+	box-sizing: border-box;
+	background-color:#ffea00;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2.8em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	min-height:80px;
+	height: auto;
+	}
+.StartmyButton:hover {
+	background-color:#ffffff;
+}
+.StartmyButton:active {
+	position:relative;
+}
+
+.StartmyButton2 {
+	box-sizing: border-box;
+	background-color:#ffffff;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:2.8em;
+	font-weight:bold;
+	padding-top:12px;
+	padding-bottom:12px;
+	text-decoration:none;
+	width: 100%;
+	height: 100%;
+}
+.StartmyButton2:hover {
+	background-color:#ffea00;
+}
+.StartmyButton2:active {
+	position:relative;
+	/*top:1px;*/
+}
+
+
+.QuoteText {
+    font-size:3.6em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 9px 5px 9px;
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+	}
+.SigText {
+  /*  font-size:2.7em; */
+    font-weight:normal;
+    overflow:visible;
+    /*padding:0px 9px 5px 9px;*/
+    text-align:center;
+	color: white;
+	padding-bottom:15px;
+    font-style: italic;
+	}
+	
+h1 {
+	color: #ffea00;
+    font-size:5em;
+    font-weight:bold;
+    margin:0px;
+    overflow:visible;
+    padding:5px;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.DateText {
+    font-size:2.7em;
+    font-weight:bold;
+    overflow:visible;
+    padding:0px 5px 5px 5px;
+    text-align:center;
+	color: #ffea00;
+	padding-bottom:15px;
+	}
+	
+.KayCredit{
+	color: #ffffff; /*ffea00;*/
+    font-size:2.4em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.KayCreditBlack{
+	color: #000000; /*ffea00;*/
+    font-size:2.4em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+
+.KayCredit:hover{
+	color: #ffffff; /*ffea00;*/
+    font-size:2.4em;
+    font-weight:bold;
+    text-align:center;
+	padding-bottom:15px;
+}
+	
+#MainQuote2 {
+	height:auto;                   /* text area height */
+    width:48%;
+	float:left;
+	margin-top:20px;
+}
+
+#MainQuote2b {
+	height:auto;                   /* text area height */
+    width:48%;
+	float:left;
+	margin-top:20px;
+	
+}
+
+#MainQuote3 {
+	height:auto;                   /* text area height */
+    width:100%;
+	float:right;
+	margin-top:20px;
+	
+}
+
+#ButtonInner {
+	overflow:auto;
+    width:90%; /*90%;   text area width */
+	max-width:500px;                 
+    text-align:center;
+    padding:0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+}
+
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+}
+
+/* Large devices (large desktops, 1200px and up) 
+@media (min-width: 1200px) { 
+
+}*/
